@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="3.0" method="upgrade">
+<extension type="component" version="0.1" method="upgrade">
 	<name>com_contactus</name>
 	<author>Adam Rifat</author>
-	<creationDate>2012</creationDate>
-	<copyright>(C) 2005 - 2012 Open Source Matters. All rights reserved.
-	</copyright>
-	<license>GNU General Public License version 2 or later; see
-		LICENSE.txt</license>
+	<creationDate>Oct 2015</creationDate>
+	<copyright>	</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
 	<authorEmail>adam@littledonkey.net</authorEmail>
-	<authorUrl></authorUrl>
-	<version>3.0.0</version>
-	<description>COM_FCCONTACT_XML_DESCRIPTION</description>
+	<authorUrl>www.littledonkey.net</authorUrl>
+	<version>0.1</version>
+	<description>COM_CONTACTUS_XML_DESCRIPTION</description>
 	<files folder="site">
 		<filename>controller.php</filename>
 		<filename>index.html</filename>

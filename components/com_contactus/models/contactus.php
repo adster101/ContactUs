@@ -85,11 +85,12 @@ class ContactusModelContactus extends JModelAdmin
   {
 
     $app = JFactory::getApplication();
+    $sitename = $app->getCfg('site_name');
     $menuItem = $app->getMenu()->getActive();
     $params = $menuItem->params;
 
-    $subject = JText::_(
-                    'COM_CONTACTUS_EMAIL_SUBJECT'
+    $subject = JText::sprintf(
+                    'COM_CONTACTUS_EMAIL_SUBJECT', $sitename
     );
 
     $body = JText::sprintf(

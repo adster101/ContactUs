@@ -25,8 +25,7 @@ class ContactusControllerContactus extends JControllerForm
     $model = $this->getModel();
     $state = $model->get('state');
     $params = $state->get('parameters.menu');
-
-
+    
     // Get the data from POST
     $data = $this->input->post->get('jform', array(), 'array');
 
@@ -66,10 +65,8 @@ class ContactusControllerContactus extends JControllerForm
       return false;
     }
 
-    // Hand the data into the model, create the new user
-    $user = $model->save($validate);
-
-    if (!$user)
+    // Hand the data into the model, save
+    if (!$model->save($validate))
     {
 
       $app->setUserState('com_contactus.contactus.data', $data);
@@ -83,9 +80,10 @@ class ContactusControllerContactus extends JControllerForm
 
     // Flush the data from the session
     $app->setUserState('com_contactus.contactus.data', null);
-    $this->setRedirect(JRoute::_('index.php?option=com_contactus&sent=true'));
+    
+    $this->setRedirect(JRoute::_('index.php?option=com_content&view=article&Itemid=' . $params->get('redirect')));
 
-    $this->setMessage(JText::_('COM_CONTACTUS_EMAIL_SUCCESS'),'success');
+    $this->setMessage(JText::_('COM_CONTACTUS_EMAIL_SUCCESS_MESSAGE'),'success');
 
     return true;
   }

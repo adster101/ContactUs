@@ -18,48 +18,24 @@ JHtml::_('behavior.tooltip');
   <fieldset class="adminform">
     <legend><?php echo JText::_('COM_CONTACTUS_CONTACT_US'); ?></legend>
 
-    <div class="form-group">
-      <?php echo $this->form->getLabel('nature'); ?>
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('nature'); ?>
-      </div>
-    </div>
-    <div class="form-group">
-      <?php echo $this->form->getLabel('name'); ?>
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('name'); ?>
-      </div>
-    </div>
-    <div class="form-group">
-      <?php echo $this->form->getLabel('email'); ?> 
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('email'); ?>
-      </div>
-    </div>
-    <div class="form-group">
-      <?php echo $this->form->getLabel('tel'); ?> 
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('tel'); ?>
-      </div>
-    </div>
-    <div class="form-group">
-      <?php echo $this->form->getLabel('message'); ?> 
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('message'); ?>
-      </div>
-    </div>
-    <div class="form-group">
-      <?php echo $this->form->getLabel('captcha'); ?>
-      <div class="col-sm-9">
-        <?php echo $this->form->getInput('captcha'); ?>
-      </div>
-    </div>
-    <div class="col-sm-9 col-sm-offset-3">
-      <button class="btn btn-primary btn-lg btn-block " type="submit">
-        <?php echo JText::_('COM_CONTACTUS_SEND_MESSAGE'); ?>
-      </button>
-      <input type="hidden" name="task" value="contactus.send" />
-      <?php echo JHtml::_('form.token'); ?>
-    </div>
-  </fieldset>
+    <?php foreach ($this->form->getFieldset('contactus') as $field) : ?>
+      <?php if (!$field->hidden) : ?>
+        <div class="control-group">
+          <div class="control-label">
+            <?php echo $field->label; ?>
+          </div>
+          <div class="controls">
+            <?php echo $field->input; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    <?php endforeach; ?>
+  </fieldset> 
+  <div class="form-actions">
+    <button class="btn btn-primary validate" type="submit"><?php echo JText::_('COM_CONTACTUS_CONTACT_SEND'); ?></button>
+    <input type="hidden" name="option" value="com_contactus" />
+    <input type="hidden" name="task" value="contactus.send" />
+    <input type="hidden" name="return" value="<?php echo $this->return_page; ?>" />
+    <?php echo JHtml::_('form.token'); ?>
+  </div>
 </form>

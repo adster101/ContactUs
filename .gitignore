@@ -33,7 +33,6 @@
 /administrator/help/
 /administrator/includes/
 /administrator/index.php
-/administrator/language/
 /administrator/manifests/
 /administrator/modules/
 /administrator/templates/
@@ -106,3 +105,4 @@
 /web.config.txt
 /robots.txt.dist
 /nbproject/
+/.htaccess

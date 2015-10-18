@@ -1,0 +1,16 @@
+# Ignore everything in this directory
+/overrides
+/index.html
+
+# Except this file
+!.gitignore
+
+# And except ini, php and xml in the en-GB folders
+en-GB/*.ini
+en-GB/*.php
+en-GB/*.xml
+
+# But don't ignore the contact us lang file
+!en-GB/*contactus.ini
+!en-GB/*contactus.sys.ini
+

@@ -2,7 +2,7 @@
 <form 
   addrulepath="components/com_contactus/models/rules">
   <fieldset 
-    name="register" 
+    name="contactus" 
     label="">
     
     <field 

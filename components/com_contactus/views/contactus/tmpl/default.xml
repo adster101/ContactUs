@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-  <layout title="COM_FCCONTACT_VIEW_DEFAULT">
+  <layout title="COM_CONTACTUS_VIEW_DEFAULT">
     <message>
-      <![CDATA[COM_FCCONTACT_VIEW_DEFAULT_DESC]]>
+      <![CDATA[COM_CONTACTUS_VIEW_DEFAULT_DESC]]>
     </message>
   </layout>
   <fields
     name="params"
-    addfieldpath="/administrator/components/com_fccontact/models/fields"
-  >
+    addfieldpath="/administrator/components/com_contactus/models/fields">
     <fieldset name="basic">
-     
       <field 
         type="text"
         name="contact"
         default=""
         validate="email"
-        label="COM_FCCONTACT_CONTACT_EMAIL"
-        description="COM_FCCONTACT_CONTACT_EMAIL_DESC"
-        
+        label="COM_CONTACTUS_CONTACT_EMAIL_TO"
+        description="COM_CONTACTUS_CONTACT_EMAIL_TO_DESC"
+        required="true"
+      />
+      <field 
+        type="menuitem"
+        name="redirect"
+        default=""
+        label="COM_CONTACTUS_SUCCESS_REDIRECT"
+        description="COM_CONTACTUS_SUCCESS_REDIRECT_DESC"
+        required="true"
       />
     </fieldset>
   </fields>
